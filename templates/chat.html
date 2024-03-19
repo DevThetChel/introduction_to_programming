@@ -53,7 +53,7 @@
         if (!window["WebSocket"]) {
             alert("Error: Your browser does not support web sockets.");
         } else {
-            socket = new WebSocket("ws://{{.Host}}/room");
+            socket = new WebSocket("wss://animated-meme-vx7rj979vjpcp49w-8080.app.github.dev/room");
 
             socket.onclose = function() {
                 alert("Connection has been closed.");
@@ -61,6 +61,8 @@
 
             socket.onmessage = function(e) {
               var msg = JSON.parse(e.data);
+
+              console.log(msg);
 
               var li = document.createElement("li");
 
